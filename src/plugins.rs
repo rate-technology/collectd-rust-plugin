@@ -59,7 +59,7 @@ pub trait PluginManager {
 
     /// Defines the capabilities of the plugin manager. Must not panic.
     fn capabilities() -> PluginManagerCapabilities {
-        PluginManagerCapabilities::default()
+        PluginManagerCapabilities::INIT
     }
 
     /// Returns one or many instances of a plugin that is configured from collectd's configuration
