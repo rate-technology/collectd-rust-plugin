@@ -9,7 +9,7 @@ use std::ffi::{CStr, CString};
 use std::fmt::Write as FmtWrite;
 use std::io::{self, Write};
 use std::mem;
-use strum_macros::EnumIter;
+use strum_macros::{AsRefStr, EnumIter};
 
 /// Bridges the gap between collectd and rust logging. Terminology and filters methods found here
 /// are from env_logger.
@@ -293,7 +293,8 @@ macro_rules! collectd_log_raw {
 }
 
 /// The available levels that collectd exposes to log messages.
-#[derive(EnumIter, Debug, PartialEq, Eq, Clone, Copy, Hash)]
+#[derive(AsRefStr, EnumIter, Debug, PartialEq, Eq, Clone, Copy, Hash)]
+#[strum(serialize_all = "lowercase")]
 #[repr(u32)]
 pub enum LogLevel {
     Error = LOG_ERR,
