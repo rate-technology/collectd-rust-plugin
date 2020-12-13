@@ -71,14 +71,10 @@ pub trait PluginManager {
 
     /// Initialize any socket, files, event loops, or any other resources that will be shared
     /// between multiple plugin instances.
-    fn initialize() -> Result<(), Box<dyn error::Error>> {
-        Err(NotImplemented)?
-    }
+    fn initialize() -> Result<(), Box<dyn error::Error>>;
 
     /// Cleanup any resources or glodal data, allocated during initialize()
-    fn shutdown() -> Result<(), Box<dyn error::Error>> {
-        Ok(())
-    }
+    fn shutdown() -> Result<(), Box<dyn error::Error>>;
 }
 
 /// An individual plugin that is capable of reporting values to collectd, receiving values from
