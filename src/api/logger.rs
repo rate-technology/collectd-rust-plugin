@@ -292,7 +292,7 @@ macro_rules! collectd_log_raw {
 }
 
 /// The available levels that collectd exposes to log messages.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
 #[repr(u32)]
 pub enum LogLevel {
     Error = LOG_ERR,
