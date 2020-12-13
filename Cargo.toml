@@ -21,12 +21,14 @@ regex = "1"
 bindgen = { version = "0.55.1", optional = true }
 
 [dependencies]
-chrono = "0.4.0"
 bitflags = "1.0"
-memchr = "2"
-log = "0.4"
+chrono = "0.4.0"
 env_logger = { version =  "0.7", default-features = false }
+log = "0.4"
+memchr = "2"
 serde = { version = "1", features = ["derive"], optional = true }
+strum = "0.20"
+strum_macros = "0.20"
 
 [dev-dependencies]
 serde = { version = "1", features = ["derive"] }
